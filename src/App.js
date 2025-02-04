@@ -5,7 +5,6 @@ import AppProviders from './providers/appProvider';
 import { AuthProvider, useAuth } from './providers/authProvider';
 import Login from './components/login';
 import Dashboard from './components/dashboard';
-import MediaPreview from './components/mediaPreview';
 import MediaUploader from './components/mediaUploader';
 
 const ProtectedRoute = ({ allowedRoles, children }) => {
