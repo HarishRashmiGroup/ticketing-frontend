@@ -27,7 +27,7 @@ const Login = () => {
 
         try {
             const response = await fetch(
-                "http://localhost:3000/users/send-otp",
+                "http://localhost:3000/user/send-otp",
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -56,11 +56,11 @@ const Login = () => {
 
         try {
             const response = await fetch(
-                "http://localhost:3000/users/verify-otp",
+                "http://localhost:3000/user/verify-otp",
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ email, otp }),
+                    body: JSON.stringify({ email, passkey: otp }),
                 }
             );
 

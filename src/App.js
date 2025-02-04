@@ -5,6 +5,8 @@ import AppProviders from './providers/appProvider';
 import { AuthProvider, useAuth } from './providers/authProvider';
 import Login from './components/login';
 import Dashboard from './components/dashboard';
+import MediaPreview from './components/mediaPreview';
+import MediaUploader from './components/mediaUploader';
 
 const ProtectedRoute = ({ allowedRoles, children }) => {
   const user = useAuth();
@@ -27,17 +29,18 @@ function App() {
           </Box>}>
             <Box >
               <Routes>
-                <Route path="/" />
-                <Route path="/login" element = {<Login/>} />
+                <Route path="/" element={<MediaUploader />} />
+                <Route path="/login" element={<Login />} />
+                <Route path='/service-request' />
+                <Route path='/incident-request' />
                 <Route
                   path="/dashboard"
                   element={
                     <ProtectedRoute allowedRoles={['admin', 'manager']}>
-                      <Dashboard/>
+                      <Dashboard />
                     </ProtectedRoute>
                   }
                 />
-                <Route path="/maintenance"  />
               </Routes>
             </Box>
           </Suspense>
