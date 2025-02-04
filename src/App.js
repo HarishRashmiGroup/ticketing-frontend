@@ -37,7 +37,7 @@ function App() {
                     </ProtectedRoute>
                   }
                 />
-                <Route path="/maintenance"  />
+                <Route path="/home"  />
               </Routes>
             </Box>
           </Suspense>
