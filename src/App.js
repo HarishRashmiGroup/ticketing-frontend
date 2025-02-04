@@ -37,7 +37,7 @@ function App() {
                     </ProtectedRoute>
                   }
                 />
-                <Route path="/home"  />
+                <Route path="/dashbordldjf"  />
               </Routes>
             </Box>
           </Suspense>
