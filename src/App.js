@@ -4,6 +4,7 @@ import { Box, Text, Spinner } from '@chakra-ui/react';
 import AppProviders from './providers/appProvider';
 import { AuthProvider, useAuth } from './providers/authProvider';
 import Login from './components/login';
+import Dashboard from './components/dashboard';
 
 const ProtectedRoute = ({ allowedRoles, children }) => {
   const user = useAuth();
@@ -29,9 +30,10 @@ function App() {
                 <Route path="/" />
                 <Route path="/login" element = {<Login/>} />
                 <Route
-                  path="/production"
+                  path="/dashboard"
                   element={
                     <ProtectedRoute allowedRoles={['admin', 'manager']}>
+                      <Dashboard/>
                     </ProtectedRoute>
                   }
                 />
